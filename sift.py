@@ -46,8 +46,8 @@ class sift(object):
         scale = factor.factor()
         
         
-        pdata = pre.creatdog(pa)
-        sdata = pre.creatdog(sa)
+        pdata = pre.createspace(pa)
+        sdata = pre.createspace(sa)
         
         pDes = []
         sDes = []
