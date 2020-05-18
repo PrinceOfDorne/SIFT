@@ -1,3 +1,5 @@
+#This file setsup the scale space which is the first step in SIFT
+
 from PIL import Image
 import scipy
 import numpy
@@ -8,7 +10,7 @@ class process(object):
     def __init__(self):
         self.sigma = 1.6
 
-    def createdog(self,imagearr):
+    def createspace(self,imagearr):
         """
         return a list of image arrays containning four octaves, 
         each ovtives has four dog image arrays
@@ -44,7 +46,7 @@ class process(object):
         return: a list contains five images in image form which are blurred
         """
         SIG = self.sigma
-        sig = [SIG,k*SIG,k*k*SIG,k*k*k*SIG,k*k*k*k*SIG]
+        sig = [SIG,k*SIG,k*k*SIG,k*k*k*SIG,k*k*k*k*SIG]     #List of consecutive sigma to set up an Octave
         gsArray = [0,1,2,3,4]
         scaleImages = [0,1,2,3,4]
         
